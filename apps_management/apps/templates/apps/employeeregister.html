@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manager Registration</title>
+</head>
+<body>
+	<h2>Register</h2>
+<form method='post'>
+	{% csrf_token %}
+	{% for field in form1 %}
+		<p>
+			{{field.label_tag}}
+			{{field}}
+			
+			{% if field.errors %}
+
+			{% for error in field.errors %}
+				<p style='color:red;'>{{error}}</p>
+
+			{% endfor %}
+			{% endif %}
+
+		</p>
+	{% endfor %}
+	{% for field in form2 %}
+		<p>
+			{{field.label_tag}}
+			{{field}}
+			
+			{% if field.errors %}
+			{% for error in field.errors %}
+				<p style='color:red;'>{{error}}</p>
+
+			{% endfor %}
+			{% endif %}
+
+		</p>
+	{% endfor %}
+	<button type='submit'>Register</button>
+</form>
+
+</body>
+</html>

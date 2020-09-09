@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body><h1>Welcome {{user.username}}</h1>
+		{% for s in app %}
+		<div>
+		<form method="POST">
+		{%  csrf_token  %}
+		<div>
+			{{ s.description }} by employee {{s.employee.username}}.
+		</div>
+		<div>
+			Your Response: This application is <b> {{ s.status }}ed</b>
+		</div>
+		<div>
+			<input type="submit" value="accept" name="status">
+		</div>
+		<div >
+			<input type="submit" value="reject" name="status">
+		</div>
+			<input type="hidden" name="answer" value="{{ s.id }}">
+		</form>
+		</div>
+		{% endfor %}
+		<div>
+		<a href="{% url 'log_out' %}">Logout</a>
+		</div>
+                  
+</body>
+</html>

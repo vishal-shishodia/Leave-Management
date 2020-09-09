@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home</title>
+</head>
+<body>
+	<div>
+	<p>
+		<h1>Admin</h1>
+		<a href="{% url 'register_admin' %}">Create Admin</a><br>
+		<a href="{% url 'login_admin' %}">Login Admin</a>
+	</p>
+	</div>
+	<div>
+	<p>
+		<h1>Manager</h1>
+		<a href="{% url 'register_manager' %}">Create manager</a><br>
+		<a href="{% url 'login_manager' %}">Login manager</a>
+	</p>
+	</div>
+	<div>
+	<p>
+		<h1>Employee</h1>
+		<a href="{% url 'register_employee' %}">Create employee</a><br>
+		<a href="{% url 'login_employee' %}">Login employee</a>
+		
+	</p>
+	</div>
+</body>
+</html>

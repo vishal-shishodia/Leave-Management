@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>App Status</title>
+</head>
+<body>
+
+	{% for s in app %}
+		{% if s.status == 'reject' %}
+			<p>Application has been {{ s.status }}ed by  Sir {{s.to_manager}}</p>
+		{% elif s.status == 'accept' %}
+			<p>Application has been {{ s.status }}ed by  Sir {{s.to_manager}}</p>
+		{% elif s.status == None %}
+			<p>Application is not responded yet by  Sir {{s.to_manager}}</p>
+		{% endif %}
+	{% endfor %}
+
+</body>
+</html>
